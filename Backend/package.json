@@ -1,0 +1,46 @@
+{
+  "name": "multi-connection-webrtc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "static": "tsx src/app.ts",
+    "compile": "npx tsc --noCheck",
+    "minify": "node commands/terser-minify.js",
+    "build": "yarn compile && yarn minify",
+    "build:railway": "npm run compile && npm run minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-form-data": "^3.0.1",
+    "express-formidable": "^1.2.0",
+    "express-rate-limit": "^8.2.1",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.3.0",
+    "moment": "^2.30.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/express-form-data": "^2.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.1",
+    "terser": "^5.44.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "imports": {
+    "#src/*": "./dist/src/*",
+    "#root/*": "./dist/*",
+    "#services/*": "./dist/src/services/*"
+  }
+}
