@@ -37,4 +37,5 @@ initSocketIO(server);
 server.listen(APP_PORT, () => {
   console.log(`http://localhost:${APP_PORT}`);
 });
-export {app, server};
+export default app;
+export {server};
