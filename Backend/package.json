@@ -10,6 +10,7 @@
     "compile": "npx tsc --noCheck",
     "minify": "node commands/terser-minify.js",
     "build": "yarn compile && yarn minify",
+    "render": "yarn && yarn build",
     "build:railway": "npm run compile && npm run minify"
   },
   "keywords": [],
