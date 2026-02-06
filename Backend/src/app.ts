@@ -8,6 +8,7 @@ import {applyLimiter} from "./libs/limiter/index.js";
 import {requestLogger} from "./gears/logger.js";
 import {APP_PORT} from "./services/shared/constants/index.js";
 import {initSocketIO} from "./services/socket/app.js";
+import "./libs/cron/index.js";
 
 const app = express();
 const server = http.createServer(app);
