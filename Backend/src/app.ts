@@ -9,11 +9,13 @@ import {requestLogger} from "./gears/logger.js";
 import {APP_PORT} from "./services/shared/constants/index.js";
 import {initSocketIO} from "./services/socket/app.js";
 import "./libs/cron/index.js";
-
 const app = express();
 const server = http.createServer(app);
+const rootJson = await import("../sample-root.json", {
+  with: {type: "json"}
+}); //  app basic settings
 
-//  app basic settings
+console.info(rootJson ? "root json loaded successfully" : "failed to load root json");
 app.use(applyLimiter());
 app.use(cors());
 app.use(express.json());
